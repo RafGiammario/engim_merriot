@@ -1,3 +1,14 @@
+<?php
+require "room-function.php";
+$room = get_room(2);
+// echo "<pre>";
+// var_dump($room);
+$linked_rooms = get_room_linked(1);
+// echo "<pre>";
+// var_dump($linked_rooms);
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="it">
 <head>
@@ -12,27 +23,34 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>NOME STANZA</h1>
+        <h1><?= $room[0]["Name"] ?></h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <img src="images/rooms/id.jpg" />
+        <img src="images/rooms/<?= $room[0]["IdRoom"] ?>.jpg" />
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <p>
-          È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell’utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere (al contrario di quanto avviene se si utilizzano brevi frasi ripetute, ad esempio “testo qui”), apparendo come un normale blocco di testo leggibile. Molti software di impaginazione e di web design utilizzano Lorem Ipsum come testo modello. Molte versioni del testo sono state prodotte negli anni, a volte casualmente, a volte di proposito (ad esempio inserendo passaggi ironici).
+        <?= $room[0]["Description"] ?>
         </p>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-4">
-        lista 1
+
+        <h6>lista stanze collegate</h6>
+        <?php
+        foreach($linked_rooms as $linked){
+          $getName= get_room_name($linked[0]);
+          echo $getName[0][0]."<br />";
+        }
+        ?>
       </div>
 
       <div class="col-md-4">
