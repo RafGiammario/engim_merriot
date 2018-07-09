@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ù, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marriot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .a1 {
+            background: url(https://vignette.wikia.nocookie.net/powerlisting/images/5/53/Space_mage_by_axl99-d6ru3ej.jpg/revision/latest?cb=20150531221409);
+            background-size: cover;
+        }
+
+        .a3 {
+            background: url(http://www.havocpoint.it/wp-content/uploads/2016/03/Warcraft-Linizio.jpg);
+            background-size: cover;
+            display: none;
+        }
+
+        .a2 {
+            background: url(https://vignette.wikia.nocookie.net/vsbattles/images/d/d1/Garen_3.jpg/revision/latest?cb=20161112211501);
+            background-size: cover;
+            display: none;
+        }
+
+        .card {
+            -webkit-box-shadow: 7px 10px 12px -6px rgba(0, 0, 0, 0.59);
+            -moz-box-shadow: 7px 10px 12px -6px rgba(0, 0, 0, 0.59);
+            box-shadow: 7px 10px 12px -6px rgba(0, 0, 0, 0.59);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-6 mx-auto mt-5">
+            <div class="row mx-auto mt-5">
+                <div class="col-md-6 mt-5">
+
+
+                    <div class="card border-success mb-3" style="height: 300px">
+                        <div id='avatar1' class="card-body text-success a1">
+                        </div>
+                        <div id='avatar2' class="card-body text-success a2">
+                        </div>
+                        <div id='avatar3' class="card-body text-success a3">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 mt-5">
+                    <label class="mt-5" for="">Ruolo</label>
+                    <select class="form-control" name="" id="ruolo">
+                        <option value="1">Mago Nero</option>
+                        <option value="2">Paladino</option>
+                        <option value="3">Orco</option>
+                    </select>
+                    <br>
+                    <label for="">Stanza Inizio</label>
+                    <select class="form-control" name="" id="">
+                        <option value="">Bagno</option>
+                        <option value="">Cucina</option>
+                        <option value="">Giardino</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-1 mx-auto">
+            <input type="button" class='btn btn-success' value='ENTRA'>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(() => {
+            let avatar2 = $("#ruolo option:selected").val()
+            // let avatar = '.avatarMago'
+
+            // if (avatar2 == '1') {
+            //     avatar = '.avatarMago'
+            // } else if (avatar2 == '2') {
+            //     avatar = '.avatarOrco'
+            // } else {
+            //     avatar = '.avatarPaladino'
+            // }
+
+            $("#ruolo").on('change', (e) => {
+                $('#avatar1').hide()
+                $('#avatar2').hide()
+                $('#avatar3').hide()
+
+                if ($('option:selected').val() == '1') {
+                    $('#avatar1').show()
+                } else if ($('option:selected').val() == '2') {
+                    $('#avatar2').show()
+                } else {
+                    $('#avatar3').show()
+                }
+
+                console.log($('#ruolo option:selected').val())
+
+                avatar2 = $("#ruolo option:selected").val()
+                // avatar = '.avatarMago'
+
+                // if (avatar2 == '1') {
+                //     avatar = '.avatarMago'
+                // } else if (avatar2 == '2') {
+                //     avatar = '.avatarOrco'
+                // } else {
+                //     avatar = '.avatarPaladino'
+                // }
+            })
+
+        })
+    </script>
+</body>
+
+
+</html>
