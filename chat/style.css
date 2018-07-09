@@ -1,0 +1,53 @@
+.jumbotron {
+  background: url("http://getwallpapers.com/wallpaper/full/f/a/e/35756.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 40vh;
+  /*overflow-x: hidden;*/
+  border-radius: 0;
+}
+
+body {
+  font-family: karla;
+  font-size: 15px;
+  height: 80vh;
+}
+
+.azzurro {
+  color: #00a989;
+}
+
+a:visited {
+  color: #00a989;
+}
+
+.close {
+  color: #00a989;
+  opacity: 1;
+}
+
+.modal-body {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid #00a989;
+}
+
+.pointer {
+  cursor: pointer
+}
+
+.btn {
+  background-color: #00a989;
+  border: #00a989;
+  color: white;
+}
+
+#textarea {
+  font-size: 13px;
+}
