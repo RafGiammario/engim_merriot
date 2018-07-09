@@ -1,8 +1,8 @@
 <?php
 
-$user= "user";
-$pass="pass";
-$dbName="dbname";
+$user= "root";
+$pass="engim";
+$dbName="Merriot";
 $dbServer="localhost";
 
 $tbUsers ="User";
@@ -14,7 +14,7 @@ $tbRooms ="Room";
 /*****************************************/
 /*             INSERIMENTO               */
 /*****************************************/
-function insert_users($name,$role,$id_room){
+function insert_users($name,$role,$Id_room){
   try {
     $bres= false;
     $dbh = open_connect();
@@ -28,7 +28,7 @@ function insert_users($name,$role,$id_room){
 
     $prepared->bindParam(':paramName', $name);
     $prepared->bindParam(':paramRole', $role);
-    $prepared->bindParam(':paramRoom', $id_room);
+    $prepared->bindParam(':paramRoom', $Id_room);
     $prepared->execute();
 
   } catch (PDOException $e)  {
